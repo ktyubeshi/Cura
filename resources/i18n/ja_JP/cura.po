@@ -498,7 +498,7 @@ msgstr "ユニット値がミリメートルではなくメートルの場合、
 
 msgctxt "@label"
 msgid "Annealing"
-msgstr ""
+msgstr "アニーリング"
 
 msgctxt "@label"
 msgid "Anonymous"
@@ -1223,11 +1223,11 @@ msgstr "拒否してアカウントから削除"
 
 msgctxt "@info:No intent profile selected"
 msgid "Default"
-msgstr ""
+msgstr "デフォルト"
 
 msgctxt "@label"
 msgid "Default"
-msgstr ""
+msgstr "デフォルト"
 
 msgctxt "@window:text"
 msgid "Default behavior for changed setting values when switching to a different profile: "
