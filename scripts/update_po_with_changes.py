@@ -26,7 +26,7 @@ class Msg:
 
 def parsePOFile(filename: str) -> List[Msg]:
     messages = []
-    with open(filename) as f:
+    with open(filename,mode="r",encoding='utf-8') as f:
         iterator = iter(f.readlines())
         for line in iterator:
             if line.startswith("msgctxt"):
@@ -71,7 +71,7 @@ def getDifferentMessages(messages_original: List[Msg], messages_new: List[Msg]) 
 
 def updatePOFile(input_filename: str, output_filename: str, messages: List[Msg]) -> None:
     # Takes a list of changed messages and writes a copy of input file with updated message strings
-    with open(input_filename, "r") as input_file, open(output_filename, "w") as output_file:
+    with open(input_filename, "r",encoding='utf-8') as input_file, open(output_filename, "w",encoding='utf-8',newline='\n') as output_file:
         iterator = iter(input_file.readlines())
         for line in iterator:
             output_file.write(line)
@@ -111,4 +111,4 @@ if __name__ == "__main__":
     messages_updated = parsePOFile(args.updated_file)
     messages_original = parsePOFile(args.original_file)
     different_messages = getDifferentMessages(messages_original, messages_updated)
-    updatePOFile(args.original_file, "updated.po", different_messages)
+    updatePOFile(args.original_file, args.original_file + ".updated.po", different_messages)
